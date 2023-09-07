@@ -1,0 +1,136 @@
+/*
+@theme talanTheme
+*/
+
+@import 'uncover';
+
+* {
+    font-weight: 200;
+    text-align: left;
+}
+
+footer {
+  text-align: unset;
+}
+
+pre {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img[alt~="logo"] {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 100px;
+  position: absolute;
+  left: 50px;
+  right: 50px;
+  top: 20px;
+  text-align: unset;
+}
+
+.summary {
+  margin-top: 30px;
+  text-align: left;
+  margin-left: 20%;
+}
+
+.flex {
+  display: flex;
+  margin: 3px;
+  margin-top: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: auto;
+}
+
+.line {
+  height: 100%;
+  width: 2px;
+  background-color: white;
+  margin: 0 50px;
+}
+
+.com1 {
+  font-size: 30px;
+  position: absolute;
+  top: 370px;
+  left: 30px;
+  color: orange;
+}
+
+.com2 {
+  font-size: 30px;
+  position: absolute;
+  top: 470px;
+  right: 20px;
+  color: orange;
+  text-align: center;
+}
+
+.pros-and-cons {
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+span {
+  margin: auto;
+  text-align: left;
+}
+
+h3 {
+  display: inline-block;
+  height: 100%;
+  
+}
+
+
+
+
+
+/************************************
+ * Classes specific to one attrbute *
+ ************************************/ 
+
+.orange {
+  color: rgb(255, 166, 0);
+}
+
+.blue {
+  color: rgb(117, 201, 244);
+}
+
+.pros {
+  color: rgb(148, 240, 148);
+}
+
+.warning, .cons {
+  color: rgb(244, 98, 98);
+}
+
+.small {
+  font-size: 20px;
+}
+
+.mauto {
+  margin: 0 auto;
+}
+
+.mr {
+  margin-right: 30px;
+}
+
+.mt {
+  margin-top: 50px;
+}

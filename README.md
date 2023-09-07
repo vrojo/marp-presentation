@@ -1,129 +1,350 @@
-<!--
-theme: gaia
-class:
- - invert
-headingDivider: 2 
+---
+marp: true
+theme: talanTheme
+class: invert
+markdown.marp.enableHtml: true
 paginate: true
--->
+---
+<!-- slide 1-->
+<style scoped>
+    .title {
+        top: 33%;
+    }
+</style>
+![w:110 h:42 logo](https://s2.qwant.com/thumbr/0x0/e/2/5d50d2665cfbd8ee6dd28928da34b3334fbc1075bcfd11d3a435067523dffe/talan-white.png?u=http%3A%2F%2Fstantv.fr%2Fimg%2Flogos%2Ftalan-white.png&q=0&b=1&p=0&a=0)
+<p class="title">Découverte de Marp</p>
+<footer>par Vincent Rojo</footer>
 
-<!--
-_class:
- - lead
- - invert
--->
 
-# Deploy Marp to GitHub Pages
 
-Presentations to Webpages: Instantly!
 
-## What?
 
-[Marp](https://marp.app/) lets you create HTML slides from markdown (like this!).
 
-This presentation is both a [website](https://alexsci.com/marp-to-pages) and a [README.md](https://github.com/ralexander-phi/marp-to-pages/blob/main/README.md).
 
-## Why?
 
-Treat your presentation the same way you treat code.
 
-- Use git to track changes
-- Pull requests to collaborate
-- Deploy automatically
-- See a problem? Open an issue!
+---
+<!-- slide 2 -->
+![w:110 h:42 logo](https://s2.qwant.com/thumbr/0x0/e/2/5d50d2665cfbd8ee6dd28928da34b3334fbc1075bcfd11d3a435067523dffe/talan-white.png?u=http%3A%2F%2Fstantv.fr%2Fimg%2Flogos%2Ftalan-white.png&q=0&b=1&p=0&a=0)
+<h3 class="summary"> I. Installation et paramétrage rapide</h3>
+<h3 class="summary"> II. Fonctionnement</h3>
+<h3 class="summary"> III. Création d'un thème</h3>
+<h3 class="summary"> IV. Partage/Conversion</h3>
 
-## Setup
 
-Want to create your own?
 
-First, create a new repo [from the template repo](https://github.com/ralexander-phi/marp-to-pages).
+---
+<!-- slide 3 -->
+![w:110 h:42 logo](https://s2.qwant.com/thumbr/0x0/e/2/5d50d2665cfbd8ee6dd28928da34b3334fbc1075bcfd11d3a435067523dffe/talan-white.png?u=http%3A%2F%2Fstantv.fr%2Fimg%2Flogos%2Ftalan-white.png&q=0&b=1&p=0&a=0)
+<p class="title">Installation</p>
+<div class="flex">
+<div class="mr">
+<p>Tout simplement ajouter l'extension "Marp for VS Code"</p>
+</div>
 
-![](img/use-template.png)
+![w:474 h:140](./img/MarpExtension.png)
+</div>
+<br>
+<i class="small">Marp peut aussi être installé avec un package manager</i>
 
-## Configure GitHub Pages
 
-Open your new repo and [setup publishing](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#choosing-a-publishing-source).
 
-You'll typically use `gh-pages` as the deploy branch.
 
-## Review Build
 
-Click on Actions tab and see if the build succeeded (it may take some time).
 
-![](img/click-actions.png)
 
-You should now see the generated files in the `gh-pages` branch.
 
-## View webpage
 
-Open your deployed webpage to see the content.
+---
+<!-- slide 4 -->
+![w:110 h:42 logo](https://s2.qwant.com/thumbr/0x0/e/2/5d50d2665cfbd8ee6dd28928da34b3334fbc1075bcfd11d3a435067523dffe/talan-white.png?u=http%3A%2F%2Fstantv.fr%2Fimg%2Flogos%2Ftalan-white.png&q=0&b=1&p=0&a=0)
+<span>Autoriser l'utilisation de balises HTML depuis les paramètres de l'extension</span>
+<div class="mauto">
 
-Out of the box you should see `README.md` as `/index.html` and `/README.pdf`. Slides under `docs/` are also converted.
+![height:2in](./img/EnableHTML.png)
+</div>
 
-## Running locally
 
-Locally you'll run commands like:
 
-```
-$ marp README.md -o build/README.pdf
-```
-
-or
-
-```
-$ npx @marp-team/marp-cli@latest README.md -o build/README.pdf
-```
-
-## As a workflow step
-
-The workflow runs an equivalent step:
+---
+<!-- slide 5 -->
+![w:110 h:42 logo](https://s2.qwant.com/thumbr/0x0/e/2/5d50d2665cfbd8ee6dd28928da34b3334fbc1075bcfd11d3a435067523dffe/talan-white.png?u=http%3A%2F%2Fstantv.fr%2Fimg%2Flogos%2Ftalan-white.png&q=0&b=1&p=0&a=0)
+<p class="title">Customisation rapide</p>
+<p>3 thèmes disponibles par défaut :  <span class="blue">default</span> / uncover / <span class="warning">gaia</span></p>
 
 ```
-- name: Marp Build (README.pdf)
-  uses: docker://marpteam/marp-cli:v1.7.0
-  with:
-    args: README.md -o build/README.pdf
-  env:
-    MARP_USER: root:root
+theme: uncover
 ```
 
-Note the `args` match the previous slide.
+<p>L'ajout de l'attribut class (optionnel)</p>
 
-## Customizing the build
-
-Anything in the `build/` folder will be deployed to GitHub Pages.
-
-You can copy extra files or run further processing steps using other tools.
-
-## Learn more about Marp
-
-This is a good time to learn more about Marp. Here's some resources:
-
-- [CommonMark](https://commonmark.org/)
-- [Cheat Sheet](https://commonmark.org/help/)
-- [Themes](https://github.com/marp-team/marp-core/tree/master/themes)
-- [CSS Themes](https://marpit.marp.app/theme-css)
-- [Directives](https://marpit.marp.app/directives)
-- [VS Code plugin](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
-
-## Example Sites
-
-Known sites using this action are:
-
-- [University of Illinois at Urbana-Champaign's CS 199 Even More Practice](https://cs199emp.netlify.app/) [(code)](https://github.com/harsh183/emp-125)
-- [Exploring agent based models](https://roiarthurb.github.io/Talk-UMMISCO_06-07-2020/) [(code)](https://github.com/RoiArthurB/Talk-UMMISCO_06-07-2020)
-
-Send a [pull request](https://github.com/ralexander-phi/marp-to-pages) to get your site added.
-
-## Publish your slides
-
-When you are ready to share your presentation, commit or merge to `main` and your content on GitHub Pages will automatically update.
-
-# 🎉
-<!--
-_class:
- - lead
- - invert
--->
-### Hooray!
+```cs
+class: invert
+```
 
 
+
+
+
+---
+<!-- slide 6 -->
+![w:110 h:42 logo](https://s2.qwant.com/thumbr/0x0/e/2/5d50d2665cfbd8ee6dd28928da34b3334fbc1075bcfd11d3a435067523dffe/talan-white.png?u=http%3A%2F%2Fstantv.fr%2Fimg%2Flogos%2Ftalan-white.png&q=0&b=1&p=0&a=0)
+<p class="title">Fonctionnement</p>
+
+<span class="flex">Créer un fichier
+    <i class="orange mr">"slides.md"</i>
+    <i class="small">(le nom n'a pas d'importance)</i>
+</span>
+
+<span>Ajouter le texte suivant au début du fichier pour que l'IDE comprenne qu'il s'agit d'un fichier Marp :</span>
+
+
+```cs
+---
+marp: true
+theme: uncover
+class: invert
+---
+```
+
+---
+<!-- slide 7 -->
+![w:110 h:42 logo](https://s2.qwant.com/thumbr/0x0/e/2/5d50d2665cfbd8ee6dd28928da34b3334fbc1075bcfd11d3a435067523dffe/talan-white.png?u=http%3A%2F%2Fstantv.fr%2Fimg%2Flogos%2Ftalan-white.png&q=0&b=1&p=0&a=0)
+<style scoped>
+    div {
+        position: absolute;
+        top: 25%;
+    }
+    span {
+        text-align: left;
+        margin-top: 0;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    p {
+        flex: 1;
+    }
+    pre {
+        min-width: 700px;
+        right: 30px;
+        margin-left: auto;
+        margin-right: 0px;
+    }
+</style>
+<div class="flex-col mt">
+<span class="flex">
+<p>Créer une slide :</p>
+
+```
+---
+```
+</span>
+
+<span class="flex">
+<p>Insérer une image :</p>
+
+```
+![width:474 height:120](../MarpExtension.png)
+```
+</span>
+
+```
+![width:474 height:140](../MarpExtension.png)
+![w:474 h:140](../MarpExtension.png)
+![bg left height:2in](../MarpExtension.png)
+```
+
+
+
+
+
+---
+<!-- slide 9-->
+<style>
+    pre {
+        min-width: 45%;
+        right: 30px;
+        margin-right: auto;
+    }
+</style>
+<span>Possibilité de structurer les slides grâce aux balises HTML</span>
+<br>
+
+<div class="flex">
+<div>Créer des zones de texte pour organiser les slides</div>
+<div class="line"></div>
+
+```html
+<div class="flex-col">
+    <span>colonne 1</span>
+    <div class="line"></div>
+    <span>colonne 2</span>
+<div>
+```
+</div>
+
+
+
+
+
+---
+<!-- slide 8 -->
+![w:110 h:42 logo](https://s2.qwant.com/thumbr/0x0/e/2/5d50d2665cfbd8ee6dd28928da34b3334fbc1075bcfd11d3a435067523dffe/talan-white.png?u=http%3A%2F%2Fstantv.fr%2Fimg%2Flogos%2Ftalan-white.png&q=0&b=1&p=0&a=0)
+<span>Utiliser le HTML et le CSS pour gérer le positionnement et l'affichage des éléments.</span>
+<p class="mt">Gestion du CSS classique entre les balises :</p>
+
+```html
+<style></style>
+```
+<br><span>Ajouter "scoped" pour limiter le CSS à la slide :</span>
+
+```html
+<style scoped></style>
+```
+
+
+
+
+
+---
+<!-- slide 10 -->
+<style scoped>
+    i {
+        display: flex;
+        text-align: left;
+    }
+</style>
+![w:110 h:42 logo](https://s2.qwant.com/thumbr/0x0/e/2/5d50d2665cfbd8ee6dd28928da34b3334fbc1075bcfd11d3a435067523dffe/talan-white.png?u=http%3A%2F%2Fstantv.fr%2Fimg%2Flogos%2Ftalan-white.png&q=0&b=1&p=0&a=0)
+<!--_backgroundColor: #272727-->
+<!--_color: yellow-->
+
+<i>Fonctionnement similaire pour les directives qu'on peut appliquer à une seule slide.</i>
+
+```
+<!--_backgroundColor: #272727-->
+
+<!--_color: yellow-->
+```
+
+
+---
+<!-- slide 11 -->
+![w:110 h:42 logo](https://s2.qwant.com/thumbr/0x0/e/2/5d50d2665cfbd8ee6dd28928da34b3334fbc1075bcfd11d3a435067523dffe/talan-white.png?u=http%3A%2F%2Fstantv.fr%2Fimg%2Flogos%2Ftalan-white.png&q=0&b=1&p=0&a=0)
+<p class="title">Création d'un thème</p>
+<p>Créer un fichier CSS (<i>ex:</i> <i class="orange">"styles.css"</i>) au même endroit que <i class="orange">"slides.md"</i> avec les lignes suivantes :</p>
+
+```html
+/*
+@theme monTheme
+*/
+
+@import 'uncover';
+```
+
+<div class="com1">Nom donné au thème →</div>
+<div class="com2">
+    ← Le thème qu'on veut override<br>
+    pour en conserver une partie<br>des paramètres CSS
+</div>
+
+
+
+
+
+
+
+
+
+
+
+---
+<!-- slide 12 -->
+![w:110 h:42 logo](https://s2.qwant.com/thumbr/0x0/e/2/5d50d2665cfbd8ee6dd28928da34b3334fbc1075bcfd11d3a435067523dffe/talan-white.png?u=http%3A%2F%2Fstantv.fr%2Fimg%2Flogos%2Ftalan-white.png&q=0&b=1&p=0&a=0)
+
+Remplacer le nom du thème dans le fichier <i class="orange">"slides.md"</i>
+```
+theme: monTheme
+```
+Créer un dossier ".vscode" à la racine du projet qui va contenir le fichier settings.json avec le code suivant :
+
+```json
+{
+    "markdown.marp.themes": [
+      "./src/styles.css"
+    ]
+}
+```
+
+
+
+---
+<!-- slide 13 -->
+<style>
+    pre {
+        margin-left: unset;
+        margin-right:unset;
+    }
+</style>
+![w:110 h:42 logo](https://s2.qwant.com/thumbr/0x0/e/2/5d50d2665cfbd8ee6dd28928da34b3334fbc1075bcfd11d3a435067523dffe/talan-white.png?u=http%3A%2F%2Fstantv.fr%2Fimg%2Flogos%2Ftalan-white.png&q=0&b=1&p=0&a=0)
+<p class="title">Partage/Conversion</p>
+<p>Commandes pour convertir la présentation (html, pptx, pdf)</p>
+
+```
+npx @marp-team/marp-cli@latest slide-deck.md
+npx @marp-team/marp-cli@latest slide-deck.md -o output.html
+
+npx @marp-team/marp-cli@latest slide-deck.md --pptx
+npx @marp-team/marp-cli@latest slide-deck.md -o output.pptx
+
+npx marp --html --output=dist --input-dir=src
+```
+
+
+
+
+
+
+---
+<!-- slide 14 -->
+![w:110 h:42 logo](https://s2.qwant.com/thumbr/0x0/e/2/5d50d2665cfbd8ee6dd28928da34b3334fbc1075bcfd11d3a435067523dffe/talan-white.png?u=http%3A%2F%2Fstantv.fr%2Fimg%2Flogos%2Ftalan-white.png&q=0&b=1&p=0&a=0)
+<div class="flex">
+    <div class="flex-col">
+        <span class="pros-and-cons">Avantages</span>
+        <div class="flex pros">
+            <h3 class="mr">⊕</h3>
+            <span>Prise en main simple</span>
+        </div>
+        <div class="flex pros">
+            <h3 class="mr">⊕</h3>
+            <span>Customisation sauvegardable</span>
+        </div>
+        <div class="flex pros">
+            <h3 class="mr">⊕</h3>
+            <span>Possibilité de convertir le fichier</span>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="flex-col">
+        <span class="pros-and-cons">Désavantages</span>
+        <div class="flex cons">
+            <h3 class="mr">⊖</h3>
+            <span>Connaissances en HTML/CSS nécessaires</span>
+        </div>
+        <div class="flex cons">
+            <h3 class="mr">⊖</h3>
+            <span>Très couplé à VS Code</span>
+        </div>
+        <div class="flex cons">
+            <h3 class="mr cons">⊖</h3>
+            <span>Pas de modification sur un fichier converti</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+---
+<!-- slide 15 -->
+![w:110 h:42 logo](https://s2.qwant.com/thumbr/0x0/e/2/5d50d2665cfbd8ee6dd28928da34b3334fbc1075bcfd11d3a435067523dffe/talan-white.png?u=http%3A%2F%2Fstantv.fr%2Fimg%2Flogos%2Ftalan-white.png&q=0&b=1&p=0&a=0)
+# Merci pour votre attention 🙂
