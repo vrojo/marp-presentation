@@ -1,10 +1,16 @@
----
-marp: true
+<!--
 theme: talanTheme
-class: invert
-markdown.marp.enableHtml: true
+class:
+ - invert
+headingDivider: 2 
 paginate: true
----
+-->
+
+<!--
+_class:
+ - lead
+ - invert
+-->
 <!-- slide 1-->
 <style scoped>
     .title {
